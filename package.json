@@ -13,9 +13,13 @@
     "uuid": "^3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "7.0.x",
+    "yarn": "0.16.1"
   }
 }
