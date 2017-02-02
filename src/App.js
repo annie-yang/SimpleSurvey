@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+var uuid = require('uuid');
+var firebase = require('firebase');
+
+var config = {
+  apiKey: "AIzaSyCmOLwp-GpTQi8tH4CLnxhSESgBsNcUKGM",
+  authDomain: "simplesurvey-8b344.firebaseapp.com",
+  databaseURL: "https://simplesurvey-8b344.firebaseio.com",
+  storageBucket: "simplesurvey-8b344.appspot.com",
+  messagingSenderId: "298154451155"
+};
+
+firebase.initializeApp(config);
 
 class App extends Component {
   // state for application
   constructor(props){
     super(props);
     this.state = {
-      id: '',
+      id: uuid.v1(), // automatically create id
       name: '',
       answers: {
         q1:'',
@@ -31,7 +43,17 @@ class App extends Component {
   }
 
   handleQuestionSubmit(event){
+    firebase.database().ref('surveys/' + this.state.id).set({
+      name: this.state.name,
+      answers: this.state.answers
+    }); // store in surveys
 
+    this.setState({
+      submitted: true
+    }, function(){ //call back function
+      console.log('Questions Submitting...');
+    });
+    event.preventDefault();
   }
 
   handleQuestionChange(event){
@@ -84,10 +106,10 @@ class App extends Component {
         </div>
         <div>
           <label>What is your favorite Smartphone Brand?</label><br />
-          <input type="radio" name="q3" value="Morning" onChange={this.handleQuestionChange} />Apple<br />
-          <input type="radio" name="q3" value="Afternoon" onChange={this.handleQuestionChange} />Samsung<br />
-          <input type="radio" name="q3" value="Evening" onChange={this.handleQuestionChange} />Nexus<br />
-          <input type="radio" name="q3" value="Night" onChange={this.handleQuestionChange} />Blackberry<br />
+          <input type="radio" name="q3" value="Apple" onChange={this.handleQuestionChange} />Apple<br />
+          <input type="radio" name="q3" value="Samsung" onChange={this.handleQuestionChange} />Samsung<br />
+          <input type="radio" name="q3" value="Nexus" onChange={this.handleQuestionChange} />Nexus<br />
+          <input type="radio" name="q3" value="NBlackberry" onChange={this.handleQuestionChange} />Blackberry<br />
           <input type="radio" name="q3" value="Other" onChange={this.handleQuestionChange} />Other<br />
         </div>
         <div>
@@ -112,7 +134,9 @@ class App extends Component {
       // set questions to empty string because don't want questions to show until name is filled out
       questions = '';
     }else if(this.state.submitted === true){ // questions have been submitted
-
+      user = <h2>
+        Thank you {this.state.name}. Your survey has been submitted.
+      </h2>
     }
 
     return (
