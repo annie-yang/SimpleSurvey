@@ -19,6 +19,6 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "yarn": "0.16.1"
+    "yarn": "0.19.1"
   }
 }
