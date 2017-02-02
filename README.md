@@ -1,4 +1,4 @@
-View site live, click <a href="https://goo.gl/InOiHR" target="_blank">here</a><br/><br/>
+View site live, click <a href="https://goo.gl/InOiHR" target="_blank">here</a><br/>
 <p>Frameworks used:</p>
 <ul>
 <li><a href="https://goo.gl/Ro4G" target="_blank">Express</a></li>
@@ -16,7 +16,7 @@ View site live, click <a href="https://goo.gl/InOiHR" target="_blank">here</a><b
 <li><a href="https://goo.gl/GGjjgP" target="_blank">Google Firebase</a></li>
 </ul>
                   
-##########################################################################################################################################
+------------------------------------------------------------------------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
