@@ -1,3 +1,23 @@
+View site live, click <a href="https://goo.gl/InOiHR" target="_blank">here</a><br/><br/>
+<p>Frameworks used:</p>
+<ul>
+<li><a href="https://goo.gl/Ro4G" target="_blank">Express</a></li>
+</ul>
+<p>Libary used:</p>
+<ul>
+<li><a href="https://goo.gl/KLePN8" target="_blank">React</a></li>
+</ul>
+<p>Package manager used:</p>
+<ul>
+<li><a href="https://goo.gl/OuM1W1" target="_blank">Yarn</a></li>
+</ul>
+<p>Database used:</p>
+<ul>
+<li><a href="https://goo.gl/GGjjgP" target="_blank">Google Firebase</a></li>
+</ul>
+                  
+##########################################################################################################################################
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
